@@ -41,4 +41,27 @@ defmodule FOAFTest do
       assert FOAF.__file__() == FOAF.NS.FOAF.__file__()
     end
   end
+
+  test "basic person example" do
+    assert """
+           @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+           <http://example.com/#danbri>
+             a foaf:Person ;
+             foaf:name "Dan Brickley" ;
+             foaf:homepage <http://danbri.org/> ;
+             foaf:openid <http://danbri.org/> ;
+             foaf:img <http://njh.me/images/me.jpg> .
+           """
+           |> Turtle.read_string!()
+           |> FOAF.Person.load(~I<http://example.com/#danbri>) ==
+             {:ok,
+              %FOAF.Person{
+                __id__: ~I<http://example.com/#danbri>,
+                name: "Dan Brickley",
+                homepages: [FOAF.Document.build!(~I<http://danbri.org/>)],
+                openid: FOAF.Document.build!(~I<http://danbri.org/>),
+                images: [FOAF.Image.build!(~I<http://njh.me/images/me.jpg>)]
+              }}
+  end
 end
