@@ -1,18 +1,11 @@
 defmodule FOAF do
   @moduledoc """
-  Documentation for `FOAF`.
+  Implementation of the FOAF vocabulary.
+
+  See <http://xmlns.com/foaf/0.1/>.
   """
 
-  @doc """
-  Hello world.
+  import RDF.Namespace
 
-  ## Examples
-
-      iex> FOAF.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  act_as_namespace FOAF.NS.FOAF
 end
