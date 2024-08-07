@@ -1,6 +1,8 @@
 defmodule FOAF.MixProject do
   use Mix.Project
 
+  @scm_url "https://github.com/rdf-elixir/foaf-ex"
+
   @version File.read!("VERSION") |> String.trim()
 
   def project do
@@ -15,6 +17,10 @@ defmodule FOAF.MixProject do
 
       # Dialyzer
       dialyzer: dialyzer(),
+
+      # Docs
+      name: "FOAF.ex",
+      docs: docs(),
 
       # ExCoveralls
       test_coverage: [tool: ExCoveralls],
@@ -58,6 +64,21 @@ defmodule FOAF.MixProject do
       ignore_warnings: ".dialyzer_ignore.exs",
       # Error out when an ignore rule is no longer useful so we can remove it
       list_unused_filters: true
+    ]
+  end
+
+  defp docs do
+    [
+      main: "FOAF",
+      source_url: @scm_url,
+      source_ref: "v#{@version}",
+      extras: [
+        {:"README.md", [title: "About"]},
+        {:"CHANGELOG.md", [title: "CHANGELOG"]},
+        {:"CONTRIBUTING.md", [title: "CONTRIBUTING"]},
+        {:"LICENSE.md", [title: "License"]}
+      ],
+      skip_undefined_reference_warnings_on: ["CHANGELOG.md"]
     ]
   end
 
