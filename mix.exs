@@ -18,6 +18,10 @@ defmodule FOAF.MixProject do
       # Dialyzer
       dialyzer: dialyzer(),
 
+      # Hex
+      package: package(),
+      description: description(),
+
       # Docs
       name: "FOAF.ex",
       docs: docs(),
@@ -31,6 +35,25 @@ defmodule FOAF.MixProject do
         "coveralls.post": :test,
         "coveralls.html": :test
       ]
+    ]
+  end
+
+  defp description do
+    """
+    An implementation of FOAF for Elixir.
+    """
+  end
+
+  defp package do
+    [
+      maintainers: ["Marcel Otto"],
+      licenses: ["MIT"],
+      links: %{
+        "Homepage" => "https://rdf-elixir.dev",
+        "GitHub" => @scm_url,
+        "Changelog" => @scm_url <> "/blob/master/CHANGELOG.md"
+      },
+      files: ~w[lib priv mix.exs .formatter.exs VERSION *.md]
     ]
   end
 
