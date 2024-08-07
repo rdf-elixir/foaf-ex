@@ -22,11 +22,11 @@ defmodule FOAF.MixProject do
 
   defp deps do
     [
-      rdf_ex_dep(:rdf, "~> 1.1"),
-      rdf_ex_dep(:grax, "~> 0.3"),
+      rdf_ex_dep(:rdf, "~> 2.0"),
+      rdf_ex_dep(:grax, "~> 0.5"),
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:ex_doc, "~> 0.29", only: :dev, runtime: false},
-      {:excoveralls, "~> 0.16", only: :test}
+      {:ex_doc, "~> 0.34", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.18", only: :test}
     ]
   end
 
