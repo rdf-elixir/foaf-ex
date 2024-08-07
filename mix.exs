@@ -10,7 +10,10 @@ defmodule FOAF.MixProject do
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       elixirc_paths: elixirc_paths(Mix.env()),
-      deps: deps()
+      deps: deps(),
+
+      # Dialyzer
+      dialyzer: dialyzer()
     ]
   end
 
