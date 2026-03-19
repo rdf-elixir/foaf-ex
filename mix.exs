@@ -58,7 +58,7 @@ defmodule FOAF.MixProject do
 
   defp deps do
     [
-      rdf_ex_dep(:rdf, "~> 2.0"),
+      rdf_ex_dep(:rdf, "~> 3.0"),
       rdf_ex_dep(:grax, "~> 0.5"),
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
