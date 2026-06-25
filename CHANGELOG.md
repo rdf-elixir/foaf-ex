@@ -5,6 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/) and
 [Keep a CHANGELOG](http://keepachangelog.com).
 
 
+## Unreleased
+
+Elixir versions < 1.16 are no longer supported.
+
+[Compare v0.1.1...HEAD](https://github.com/rdf-elixir/foaf-ex/compare/v0.1.1...HEAD)
+
+
+
 ## v0.1.1 - 2026-03-19
 
 This version only upgrades to RDF.ex v3.0 and fixes warnings under Elixir v1.19
